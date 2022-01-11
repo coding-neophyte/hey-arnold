@@ -1,5 +1,5 @@
-export const getCharacters = async () =>{
-    const response = await fetch('https://hey-arnold-api.herokuapp.com/api/v1/characters')
+export const getCharacters = async (page) =>{
+    const response = await fetch(`https://hey-arnold-api.herokuapp.com/api/v1/characters?page=${page}`)
     const data = await response.json()
     return data.map(person => heyArnoldMunge(person))
 

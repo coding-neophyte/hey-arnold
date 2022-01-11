@@ -13,7 +13,6 @@ export default function CharacterDetail() {
     useEffect(() => {
         const characterDetails = async () =>{
             const singleCastMember = await getCharacterById(id)
-            console.log(singleCastMember)
             setCastMember(singleCastMember)
             setIsLoading(false)
 
@@ -23,7 +22,6 @@ export default function CharacterDetail() {
 
     return (
         <div>
-            <h1>Detail Page</h1>
             <Link to='/characters'>Back to Characters</Link>
            {isLoading ? (<h1>Loading...</h1>) : (<>
            <h3>{castMember.name}</h3>
